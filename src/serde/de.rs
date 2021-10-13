@@ -35,7 +35,7 @@ impl<'de, 'a> Deserializer<'de> for &'a Element<'a> {
         match self.get_type() {
             ElementType::NullValue => self.deserialize_unit(visitor),
             ElementType::Bool => self.deserialize_bool(visitor),
-            ElementType::String => self.deserialize_str(visitor),
+            ElementType::String => self.deserialize_string(visitor),
             ElementType::Uint64 => self.deserialize_u64(visitor),
             ElementType::Int64 => self.deserialize_i64(visitor),
             ElementType::Array => self.deserialize_seq(visitor),
